@@ -411,6 +411,8 @@ onMounted(() => {
   position: relative;
   margin: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
 }
 
 .close-btn {
@@ -449,6 +451,8 @@ onMounted(() => {
 .detail-content {
   margin: 30px 0;
   line-height: 2;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .poem-line {
@@ -463,6 +467,12 @@ onMounted(() => {
   gap: 20px;
   justify-content: center;
   margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  flex-shrink: 0;
+  background: white;
+  position: sticky;
+  bottom: 0;
 }
 
 .nav-btn {
@@ -500,6 +510,7 @@ onMounted(() => {
   .modal-content {
     margin: 10px;
     padding: 20px;
+    max-height: 90vh;
   }
   
   .detail-title {
@@ -517,6 +528,16 @@ onMounted(() => {
   .tab-btn {
     padding: 6px 12px;
     font-size: 12px;
+  }
+  
+  .poem-actions {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+  
+  .nav-btn {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 </style>
