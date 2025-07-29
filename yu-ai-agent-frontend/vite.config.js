@@ -12,6 +12,8 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    host: '0.0.0.0', // 允许外网访问
     cors: true
-  }
+  },
+  base: './' // 设置为相对路径，适合GitHub Pages等静态托管服务
 })

@@ -27,6 +27,15 @@ const routes = [
       title: 'AI超级智能体 - 鱼皮AI超级智能体应用平台',
       description: 'AI超级智能体是鱼皮AI超级智能体应用平台的全能助手，能解答各类专业问题，提供精准建议和解决方案'
     }
+  },
+  {
+    path: '/poetry',
+    name: 'Poetry',
+    component: () => import('../views/Poetry.vue'),
+    meta: {
+      title: '小学生必背古诗75首 - 鱼皮AI超级智能体应用平台',
+      description: '小学生必背古诗75首完整收录，包含汉、唐、宋、元、明、清各朝代经典诗词，支持搜索和分类浏览'
+    }
   }
 ]
 
@@ -44,4 +53,4 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-export default router 
+export default router

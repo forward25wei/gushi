@@ -34,6 +34,19 @@
           <span class="btn-icon">→</span>
         </div>
       </div>
+      
+      <div class="app-card" @click="navigateTo('/poetry')">
+        <div class="card-glow"></div>
+        <div class="app-icon poetry-icon">📚</div>
+        <div class="app-info">
+          <div class="app-title">小学必背古诗</div>
+          <div class="app-desc">75首经典古诗词，传承中华文化精髓</div>
+        </div>
+        <div class="app-button">
+          <span class="btn-text">开始学习</span>
+          <span class="btn-icon">→</span>
+        </div>
+      </div>
     </div>
     
     <div class="cyber-circles">
@@ -270,6 +283,11 @@ const navigateTo = (path) => {
 .robot-icon {
   background: linear-gradient(135deg, #00b2ff, #4f56ff);
   box-shadow: 0 0 20px rgba(0, 178, 255, 0.5);
+}
+
+.poetry-icon {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
 }
 
 .app-info {
@@ -521,4 +539,4 @@ const navigateTo = (path) => {
     opacity: 0.1;
   }
 }
-</style> 
+</style>

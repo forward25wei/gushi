@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福州三天穷游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .weather-alert {
+            background: rgba(255, 193, 7, 0.9);
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .day-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .day-title {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -23px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        
+        .time {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        .location {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .description {
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .map-link {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .map-link:hover {
+            background: #218838;
+        }
+        
+        .cost {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        .food-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .food-title {
+            color: #856404;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tips {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .tips h3 {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+        
+        .budget-summary {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .budget-summary h3 {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .day-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏮 福州三天穷游攻略 🏮</h1>
+            <p>探索有福之州，品味闽都文化</p>
+        </div>
+        
+        <div class="weather-alert">
+            <strong>⚠️ 天气提醒：</strong>
+            未来几天福州天气较热（35-37°C），第三天有中雨。建议携带防晒用品和雨具，合理安排室内外活动。
+        </div>
+        
+        <!-- 第一天 -->
+        <div class="day-card">
+            <h2 class="day-title">第一天：历史文化之旅</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">09:00 - 12:00</div>
+                    <div class="location">📍 三坊七巷</div>
+                    <div class="description">游览福州历史文化街区，参观林则徐母家故居、沈葆桢故居等名人故居</div>
+                    <a href="https://uri.amap.com/marker?position=119.296764,26.080578&name=三坊七巷&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：免费参观（部分故居收费10-20元）</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">12:00 - 13:30</div>
+                    <div class="location">🍜 午餐：永和鱼丸（三坊七巷店）</div>
+                    <div class="description">品尝福州特色鱼丸，人均消费15-25元</div>
+                    <a href="https://uri.amap.com/marker?position=119.296764,26.080578&name=永和鱼丸三坊七巷店&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：20元/人</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">14:00 - 17:00</div>
+                    <div class="location">📍 西湖公园</div>
+                    <div class="description">漫步湖心春雨、柳堤，参观鼓楼、钟楼，享受免费的自然风光</div>
+                    <a href="https://uri.amap.com/marker?position=119.286764,26.083578&name=西湖公园&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：免费（游船另收费）</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">18:00 - 19:30</div>
+                    <div class="location">🍽️ 晚餐：东街口小吃街</div>
+                    <div class="description">品尝肉燕、锅边糊等福州小吃</div>
+                    <a href="https://uri.amap.com/marker?position=119.296764,26.080578&name=东街口&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：25元/人</div>
+                </div>
+            </div>
+            
+            <div class="food-section">
+                <div class="food-title">🥟 今日美食推荐</div>
+                <p><strong>鱼丸：</strong>福州特色，Q弹爽滑，汤鲜味美</p>
+                <p><strong>肉燕：</strong>福州传统小吃，皮薄馅嫩</p>
+                <p><strong>锅边糊：</strong>福州人的早餐，配油条最佳</p>
+            </div>
+        </div>
+        
+        <!-- 第二天 -->
+        <div class="day-card">
+            <h2 class="day-title">第二天：自然风光之旅</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">08:00 - 12:00</div>
+                    <div class="location">⛰️ 鼓山风景区</div>
+                    <div class="description">登山健身，参观涌泉寺，俯瞰福州全景。建议走登山古径，锻炼身体</div>
+                    <a href="https://uri.amap.com/marker?position=119.386764,26.083578&name=鼓山风景区&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：免费（涌泉寺香火钱随意）</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">12:30 - 13:30</div>
+                    <div class="location">🍜 午餐：山下农家菜</div>
+                    <div class="description">品尝当地农家菜，价格实惠</div>
+                    <div class="cost">💰 费用：30元/人</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">14:30 - 17:30</div>
+                    <div class="location">🌳 福州国家森林公园</div>
+                    <div class="description">享受天然氧吧，参观榕荫观鱼、正心寺，适合避暑休闲</div>
+                    <a href="https://uri.amap.com/marker?position=119.286764,26.183578&name=福州国家森林公园&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：免费</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">18:00 - 19:30</div>
+                    <div class="location">🦐 晚餐：福信鱼丸（省府店）</div>
+                    <div class="description">老字号鱼丸店，品质保证</div>
+                    <a href="https://uri.amap.com/marker?position=119.296764,26.080578&name=福信鱼丸省府店&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：25元/人</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三天 -->
+        <div class="day-card">
+            <h2 class="day-title">第三天：室内文化之旅（雨天备案）</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">09:00 - 11:30</div>
+                    <div class="location">🏛️ 福建博物院</div>
+                    <div class="description">了解福建历史文化，室内参观避雨，免费开放</div>
+                    <a href="https://uri.amap.com/marker?position=119.286764,26.083578&name=福建博物院&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：免费（需预约）</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">12:00 - 13:00</div>
+                    <div class="location">🍲 午餐：大福星鱼丸</div>
+                    <div class="description">继续品尝福州鱼丸文化</div>
+                    <div class="cost">💰 费用：20元/人</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">14:00 - 16:30</div>
+                    <div class="location">🛍️ 东街口商圈</div>
+                    <div class="description">购买福州特产：茉莉花茶、橄榄、福州软木画等</div>
+                    <a href="https://uri.amap.com/marker?position=119.296764,26.080578&name=东街口&src=mypage" class="map-link" target="_blank">🗺️ 高德导航</a>
+                    <div class="cost">💰 费用：50-100元（特产购买）</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="time">17:00 - 18:30</div>
+                    <div class="location">☕ 休闲时光：书店咖啡</div>
+                    <div class="description">在书店享受下午茶时光，总结旅程</div>
+                    <div class="cost">💰 费用：30元/人</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 预算总结 -->
+        <div class="budget-summary">
+            <h3>💰 三天总预算（每人）</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div>
+                    <strong>🍽️ 餐饮费用</strong><br>
+                    早餐：10元×3天 = 30元<br>
+                    午餐：25元×3天 = 75元<br>
+                    晚餐：25元×3天 = 75元<br>
+                    <strong>小计：180元</strong>
+                </div>
+                <div>
+                    <strong>🚌 交通费用</strong><br>
+                    地铁/公交：5元×6次 = 30元<br>
+                    市内交通：20元<br>
+                    <strong>小计：50元</strong>
+                </div>
+                <div>
+                    <strong>🎫 门票费用</strong><br>
+                    大部分景点免费<br>
+                    故居门票：30元<br>
+                    <strong>小计：30元</strong>
+                </div>
+                <div>
+                    <strong>🛍️ 购物费用</strong><br>
+                    特产纪念品：100元<br>
+                    <strong>小计：100元</strong>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px; font-size: 1.2em; color: #155724;">
+                <strong>🎯 总预算：约360元/人（三天）</strong>
+            </div>
+        </div>
+        
+        <!-- 实用贴士 -->
+        <div class="tips">
+            <h3>💡 穷游实用贴士</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>住宿建议：</strong>选择青年旅社或经济型酒店，价格80-150元/晚</li>
+                <li><strong>交通优化：</strong>购买福州地铁一日票，更加经济实惠</li>
+                <li><strong>美食攻略：</strong>避开景区内餐厅，选择当地人常去的小店</li>
+                <li><strong>免费景点：</strong>三坊七巷、西湖公园、鼓山、森林公园都免费开放</li>
+                <li><strong>雨天备案：</strong>福建博物院、图书馆、商场都是不错的室内选择</li>
+                <li><strong>特产购买：</strong>在超市或农贸市场购买特产更便宜</li>
+                <li><strong>省钱技巧：</strong>关注景区官方微信，有时有优惠活动</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; color: white;">
+            <p>🌟 愿您在福州度过美好的三天时光！🌟</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">本攻略基于高德地图数据制作，点击导航链接可直接跳转到高德地图APP</p>
+        </div>
+    </div>
+</body>
+</html>
